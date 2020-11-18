@@ -26,6 +26,8 @@ drone_two_to_six = 9.00
 drone_six_to_ten = 12.00
 drone_over_ten = 14.25
 
+wt = input("How much does your package weigh? ")
+
 def ground_shipping(weight):
   if weight <= 2:
     pp_cost = weight * ground_two_lbs_and_under
@@ -57,3 +59,6 @@ def most_efficient(weight):
     return "The most cost efficient shipping is Drone Shipping, it will cost: ", drone_shipping(weight)
   elif premium_ground_shipping <= ground_shipping(weight) and premium_ground_shipping <= drone_shipping(weight):
     return "The most cost efficient shipping is Premium Ground Shipping, it will cost: ", premium_ground_shipping
+
+best_deal = most_efficient(int(wt))
+print(best_deal)
